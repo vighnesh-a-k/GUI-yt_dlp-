@@ -4,6 +4,7 @@ from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 import yt_dlp
 ydl_opts = {
+    
   
 }
 resolutions=[]
@@ -28,6 +29,8 @@ class Window(QMainWindow):
         self.UiComponents()
  
         self.resolutions=[]
+
+        self.setStyleSheet("background-color: #a4dbb3;")
         self.show()
  
         
@@ -42,7 +45,7 @@ class Window(QMainWindow):
         push1 = QPushButton("enter", self)
 
         push1.move(100,200)
-        self.download = QPushButton("download", self)
+        self.download = QPushButton("DOWNLOAD", self)
         self.download.move(100,275)
         self.intake=QLineEdit(self)
         self.intake.setGeometry(100,100,250,30)
@@ -59,8 +62,21 @@ class Window(QMainWindow):
                                  "border : 4px solid black;"
                                  "background : white;"
                                  "}")
-
-
+        self.cb.setStyleSheet("QComboBox"
+                                 "{"
+                                 
+                                 "background : white;"
+                                 "}")
+        self.download.setStyleSheet("QPushButton"
+                                 "{"
+                                 
+                                 "background : red;"
+                                 "}")
+        push1.setStyleSheet("QPushButton"
+                                 "{"
+                                 
+                                 "background : white;"
+                                 "}")
         push1.clicked.connect(self.action1)
         self.download.clicked.connect(self.downloaded)
 
@@ -91,6 +107,9 @@ App = QApplication(sys.argv)
  
 # create the instance of our Window
 window = Window()
+
+
+
  
 # start the app
 sys.exit(App.exec())
