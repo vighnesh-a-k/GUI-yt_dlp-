@@ -2,4 +2,4 @@
 simple video downloader  using yt_dlp
 
 basic gui for downloading videos using yt_dlp
-options involve selecting destination folder and format to download 
+options involve selecting destination folder and resolution  to download 
